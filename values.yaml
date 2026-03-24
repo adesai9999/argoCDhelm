@@ -1,0 +1,13 @@
+replicaCount: 3
+
+image:
+  repository: quay.io/vaibhavjain/api-service:1.0
+  tag: v1
+
+rollout:
+  steps:
+    - setWeight: 20
+    - pause: { duration: 60s }
+    - setWeight: 50
+    - pause: { duration: 120s }
+    - setWeight: 100
